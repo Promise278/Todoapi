@@ -12,7 +12,7 @@
         <div class="bg-white flex rounded-md p-5 w-4/12 max-w-xl mx-auto">
             <div class="flex w-full gap-x-2 flex-col sm:flex-row">
                 <input type="text" id="todo-input" placeholder="Enter your todo"
-                    class="border-slate-400 border w-full p-2 placeholder-slate-300 rounded-md">
+                    class="border-slate-400 border w-full p-2 placeholder-slate-300 rounded-md" disabled>
     
                 <button id="btn" class="bg-green-400 text-white text-lg p-2 rounded-md mt-2 sm:mt-0">Add</button>
             </div>
@@ -35,12 +35,17 @@
             .then(response => response.json())
             .then(json => {
                 let todoItem = document.createElement("p")
-                    todoItem.textContent = json.title
-                    todoItem.className = "text-slate-700 text-lg mt-2"
+                    todoItem.innerHTML = `${json.title} <svg id="btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>`
+                    todoItem.className = "text-slate-700 text-lg mt-2 flex gap-2"
 
                 container.appendChild(todoItem)
             })
         })
+
+        let deleteBtn = todoItem.getElementById("btn");
+        deleteBtn.addEventListener("click", () => {
+            todoItem.remove();
+        });
         
     </script>
 </body>
