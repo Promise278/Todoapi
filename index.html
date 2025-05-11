@@ -6,26 +6,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="flex flex-col min-h-screen gap-y-4 w-full bg-gradient-to-r from-lime-400 to-green-600 p-4">
-        <h4 class="text-center text-3xl md:text-4xl text-slate-800 font-bold">MY TODO LIST</h4>
-    
-        <div class="bg-white flex rounded-md p-5 w-4/12 max-w-xl mx-auto">
-            <div class="flex w-full gap-x-2 flex-col sm:flex-row">
+    <div class="flex flex-col h-screen gap-y-4 w-full bg-gradient-to-r from-lime-400 to-blue-600">
+        <h4 class="text-center text-[30px] md:text-[40px] text-slate-800 font-bold mt-12">📝MY TODO LIST</h4>
+        <div class="bg-white flex rounded-md mx-auto p-4 md:p-5 w-11/12 sm:w-8/12 md:w-6/12 lg:w-4/12">
+            <div class="flex w-full gap-x-2 md:gap-x-4">
                 <input type="text" id="todo-input" placeholder="Enter your todo"
-                    class="border-slate-400 border w-full p-2 placeholder-slate-300 rounded-md" disabled>
-    
-                <button id="btn" class="bg-green-400 text-white text-lg p-2 rounded-md mt-2 sm:mt-0">Add</button>
+                class="border-slate-400 border w-full p-2 placeholder-slate-300 text-sm md:text-base" disabled>
+
+                <button id="btn" class="bg-blue-600 rounded-md text-white text-sm md:text-[20px] p-2">Add</button>
             </div>
         </div>
-    
-        <div id="todos-container" class="flex flex-col w-4/12 max-w-xl mx-auto p-5 bg-white rounded-md">
-            <h4 class="font-bold text-xl md:text-2xl mb-2">My Todos</h4>
+        <div id="todos-container" class="flex flex-col w-11/12 sm:w-8/12 md:w-6/12 lg:w-4/12 p-4 md:p-5 bg-white mx-auto">
+            <h4 class="font-bold text-[20px] md:text-[30px] text-center">My Todos</h4>
         </div>
     </div>
     
-
-
-
     <script>
         let button = document.getElementById("btn")
         let container = document.getElementById("todos-container");
